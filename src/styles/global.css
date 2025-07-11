@@ -3,45 +3,97 @@
 @tailwind utilities;
 
 body {
-	background-color: #111;
-	color: white;
-	font-family: 'Inter Variable', sans-serif;
+  background-color: #000;
+  color: white;
+  font-family: "Inter Variable", sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
 :root {
-	--primary: red;
-	--background: #111;
+  --primary: #ffd200;
+  --background: #000;
+}
+
+.bgLinear {
+  @apply bg-linear-90 from-[#F3D444] to-[#FFD200];
 }
 
 /* Scroll */
 * {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
-	width: 12px;
+  width: 12px;
 }
 
 *::-webkit-scrollbar-track,
 body {
-	background-color: var(--background);
-	overflow-x: clip;
+  background-color: var(--background);
+  overflow-x: clip;
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: var(--primary) !important;
-	border-radius: 20px;
-	border: 5px solid var(--background);
+  background-color: var(--primary) !important;
+  border-radius: 20px;
+  border: 3px solid var(--background);
 }
 
 .bgPrimary {
-	background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .cf-container {
-	@apply max-w-[1020px] mx-auto px-4;
+  @apply max-w-[1020px] mx-auto px-4;
 }
 .cf-btn {
-	@apply block w-full py-4 font-semibold text-white text-center max-w-[400px] mx-auto;
-	background-color: var(--primary);
+  @apply block w-full py-4 font-semibold text-white text-center max-w-[400px] mx-auto;
+  background-color: var(--primary);
+}
+
+.blur-element {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: white;
+  filter: blur(120px);
+  z-index: -1;
+  animation: twinkle 10s infinite alternate;
+  opacity: 0.1;
+}
+
+.blur-element.left {
+  left: -200px;
+  transform: translateX(-50%);
+}
+
+.blur-element.right {
+  right: -200px;
+  transform: translateX(50%);
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.1;
+    transform: translateX(var(--tw-translate-x)) scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(var(--tw-translate-x)) scale(1.05);
+  }
+  100% {
+    opacity: 0.1;
+    transform: translateX(var(--tw-translate-x)) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .blur-element {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+    opacity: 0.15;
+  }
 }

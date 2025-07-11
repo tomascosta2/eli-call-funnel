@@ -1,34 +1,176 @@
 ---
-import Footer from "../../components/Footer.astro";
+import Footer from "../../components/ui/Footer.astro";
 import Layout from "../../layouts/Layout.astro";
+import Reviews from "../../components/ui/Reviews.astro";
+import CustomButton from "../../components/ui/CustomButton.astro";
+import testimonio1 from "../../assets/img/testimonios/testimonio-1.png";
+import testimonio2 from "../../assets/img/testimonios/testimonio-2.png";
+import testimonio3 from "../../assets/img/testimonios/testimonio-3.png";
+import testimonio4 from "../../assets/img/testimonios/testimonio-4.png";
+import testimonio5 from "../../assets/img/testimonios/testimonio-5.png";
+import testimonio6 from "../../assets/img/testimonios/testimonio-6.png";
+import testimonio7 from "../../assets/img/testimonios/testimonio-7.png";
+import testimonio8 from "../../assets/img/testimonios/testimonio-8.png";
+import testimonio9 from "../../assets/img/testimonios/testimonio-9.png";
+import Faqs from "../../components/Faqs.astro";
+import Title from "../../components/ui/Title.astro";
+import textDecorator from "../../assets/img/text-decorator.png";
+import textDecoratorReversed from "../../assets/img/text-decorator-2.png";
+import profilePic from "../../assets/img/perfil.png";
+// import profilePic from "../../assets/img/your-profile-pic.png";
+
+const VIDEO_TESTIMONIALS = [
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
+];
 ---
 
 <Layout>
-	<section class="py-[60px]">
-		<div class="max-w-[700px] mx-auto px-4 text-center">
-			<img class="size-[60px] bg-gray-300 rounded-full mx-auto mb-4" src="" alt="">
-			<h1 class="text-center mb-4">
-				¡Ya agendaste tu consulta!
-			</h1>
-			<p>
-				Vas a recibir un correo y WhatsApp con toda la
-				información para conectarte a llamada que agendaste.
-			</p>
-			<div class="flex justify-center mt-8">
-				<div class="bgPrimary p-4 rounded-full">
-					<svg class="size-[25px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-				</div>
-			</div>
-			<div class="grid md:grid-cols-3 gap-4 mt-8">
-				<div class="bg-gray-400 w-full p-8"></div>
-				<div class="bg-gray-400 w-full p-8"></div>
-				<div class="bg-gray-400 w-full p-8"></div>
-				<div class="bg-gray-400 w-full p-8"></div>
-				<div class="bg-gray-400 w-full p-8"></div>
-				<div class="bg-gray-400 w-full p-8"></div>
-			</div>
-		</div>
-	</section>
+  <div class="blur-element left" style="top: -200px;"></div>
+  <div class="blur-element right" style="top: 1000px;"></div>
+  <div class="blur-element left" style="top: 2000px;"></div>
+  <div class="blur-element right" style="top: 3000px;"></div>
 
-	<Footer />
+  <section class="flex items-center mt-20 mb-[119px]">
+    <div class="cf-container flex flex-col items-center text-center">
+      <img
+        src={profilePic.src}
+        alt="Profile"
+        class="w-24 h-24 rounded-full mb-8"
+      />
+
+      <p class="text-white/80 text-[16px] mb-4">
+        ¡Listo! Ya diste el primer paso
+      </p>
+
+      <h2
+        class="relative text-[20px] md:text-[32px] font-bold text-white text-center max-w-[600px] leading-[95%] tracking-[-1%] mx-auto w-fit mb-4"
+      >
+        <img
+          src={textDecoratorReversed.src}
+          alt="Text Decorator"
+          class="absolute top-[-8px] -right-6 w-[22px] h-[18px]"
+        />
+        <span class="w-[22px] h-[18px]">¡Gracias por agendar</span><br />
+        con nosotros!
+      </h2>
+
+      <p
+        class="text-white/80 text-[18px] mb-8 max-w-[300px] tracking-[-1%] leading-[95%]"
+      >
+        Te contactaremos por WhatsApp para confirmar tu llamada.
+      </p>
+
+      <Reviews text="+100kg bajados y +30 vidas cambiadas" />
+    </div>
+  </section>
+
+  <section class="py-[40px]">
+    <div class="cf-container">
+      <Title text="Casos de éxito" />
+      <p
+        class="text-white/80 font-normal text-center mb-8 max-w-[473px] mx-auto text-[18px] leading-[95%] tracking-[-1%]"
+      >
+        Cada uno de estos mensajes me recuerda por qué amo lo que hago. Gracias
+        por confiar y por dejar estas palabras que valen oro.
+      </p>
+      <div class="mt-8 max-w-[900px] mx-auto flex flex-col gap-4">
+        {
+          VIDEO_TESTIMONIALS.map((testimonial) => {
+            return (
+              <div class="p-8 md:p-[50px] border rounded-[20px] border-white/20 flex md:flex-row flex-col gap-4 md:gap-8">
+                <div class="bg-gray-400 w-[190px] md:mx-0 mx-auto rounded-[10px] aspect-[9/16]" />
+                <div class="py-8 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-[24px] font-bold">{testimonial.titulo}</h3>
+                    <p class="text-white/80 mt-4">{testimonial.story}</p>
+                  </div>
+                  <div>
+                    <p>{testimonial.nombre}</p>
+                    <p class="text-white/80 mt-2 text-[14px]">
+                      {testimonial.dato}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+      <div class="mt-2">
+        <CustomButton href="/calendly" text="Reservá tu lugar ahora" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-[80px]">
+    <div class="cf-container">
+      <Title text="Testimonios de nuestros clientes" />
+      <p class="text-white/80 text-center mt-4 max-w-[400px] mx-auto">
+        Cada uno de estos mensajes me recuerda por qué amo lo que hago. Gracias
+        por confiar y por dejar estas palabras que valen oro.
+      </p>
+      <div class="mt-8 max-w-[900px] mx-auto flex flex-col md:flex-row gap-4">
+        <div class="flex flex-col w-full gap-4 md:w-[253px]">
+          <img src={testimonio1.src} alt="Testimonio 1" class="w-full" />
+          <img src={testimonio2.src} alt="Testimonio 2" class="w-full" />
+        </div>
+        <div class="flex flex-col w-full gap-4 md:w-[311px]">
+          <img src={testimonio3.src} alt="Testimonio 3" class="w-full" />
+          <img src={testimonio4.src} alt="Testimonio 4" class="w-full" />
+          <img src={testimonio5.src} alt="Testimonio 5" class="w-full" />
+        </div>
+        <div class="flex flex-col w-full gap-4 md:w-[291px]">
+          <img src={testimonio6.src} alt="Testimonio 6" class="w-full" />
+          <img src={testimonio7.src} alt="Testimonio 7" class="w-full" />
+          <img src={testimonio8.src} alt="Testimonio 8" class="w-full" />
+          <img src={testimonio9.src} alt="Testimonio 9" class="w-full" />
+        </div>
+      </div>
+      <div class="mt-8">
+        <CustomButton href="/calendly" text="Reservá tu lugar ahora" />
+      </div>
+    </div>
+  </section>
+  <section class="pt-[40px] pb-[80px]">
+    <div class="cf-container">
+      <Title text="PREGUNTAS FRECUENTES" />
+      <Faqs />
+    </div>
+  </section>
+
+  <Footer />
 </Layout>
+
+<style define:vars={{ decoratorUrl: `url(${textDecorator.src})` }}>
+  .decorated-title-reversed::after {
+    content: "";
+    background-image: var(--decoratorUrl);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    margin-left: 8px;
+    transform: scaleX(-1) translateY(-8px);
+  }
+</style>

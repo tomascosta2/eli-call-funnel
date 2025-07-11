@@ -1,152 +1,172 @@
 ---
-import Footer from "../components/Footer.astro";
+import Footer from "../components/ui/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+import Reviews from "../components/ui/Reviews.astro";
+import CustomButton from "../components/ui/CustomButton.astro";
+import testimonio1 from "../assets/img/testimonios/testimonio-1.png";
+import testimonio2 from "../assets/img/testimonios/testimonio-2.png";
+import testimonio3 from "../assets/img/testimonios/testimonio-3.png";
+import testimonio4 from "../assets/img/testimonios/testimonio-4.png";
+import testimonio5 from "../assets/img/testimonios/testimonio-5.png";
+import testimonio6 from "../assets/img/testimonios/testimonio-6.png";
+import testimonio7 from "../assets/img/testimonios/testimonio-7.png";
+import testimonio8 from "../assets/img/testimonios/testimonio-8.png";
+import testimonio9 from "../assets/img/testimonios/testimonio-9.png";
+import Faqs from "../components/Faqs.astro";
+import Title from "../components/ui/Title.astro";
 
 const VIDEO_TESTIMONIALS = [
-	{
-		video: "",
-		titulo: "[Nombre]",
-		story: "Situación previa vs actual con storytelling",
-		nombre: "Nombre y Apellido",
-		dato: "Edad || Ubicación",
-	},
-];
-
-const SCREENSHOT_TESTIMONIALS = [
-	{
-		captura: "",
-	},
-	{
-		captura: "",
-	},
-	{
-		captura: "",
-	},
-	{
-		captura: "",
-	},
-	{
-		captura: "",
-	},
-	{
-		captura: "",
-	},
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
+  {
+    video: "",
+    titulo: "[Nombre]",
+    story: "Situación previa vs actual con storytelling",
+    nombre: "Nombre y Apellido",
+    dato: "Edad || Ubicación",
+  },
 ];
 ---
 
 <Layout>
-	<header>
-		<div class="cf-container">
-			<h3
-				class="text-center py-3 border-b border-b-white/30 font-semibold"
-			>
-				METODO EXCLUSIVO PARA [NICHO]
-			</h3>
-		</div>
-	</header>
-	<section class="py-[60px] md:pb-[80px]">
-		<div class="cf-container">
-			<p class="text-center mb-4">Prueba social</p>
-			<h1 class="text-center text-[24px] md:text-[32px] font-bold leading-[120%]">
-				LOGRA [DESEO] Y DEJAR DE [DOLOR]
-			</h1>
-			<p class="mt-4 text-center max-w-[500px] mx-auto">
-				Mira el video y descubri como dejar de [DOLOR] y [DESEO]
-			</p>
-			<div
-				class="border-4 rounded-[12px] md:rounded-[16px] border-red-500 mt-8 max-w-[750px] mx-auto"
-			>
-				<div class="p-2 text-center font-bold bg-red-500">
-					PASO 1 DE 2: CLIC PARA ACTIVAR EL SONIDO
-				</div>
-				<div
-					class="bg-gray-300 aspect-video rounded-br-[8px] md:rounded-br-[12px] rounded-bl-[8px] md:rounded-bl-[12px]"
-				>
-				</div>
-			</div>
-			<div class="mt-8">
-				<p class="text-center mb-4 text-[18px] font-bold max-w-[500px] mx-auto">PASO 2 DE 2: HACE CLIC EN EL BOTON DE ABAJO Y OBTENE UNA CONSULTA GRATUITA 👇</p>
-				<a class="cf-btn" href="/calendly">CTA</a>
-				<p class="text-center mt-4 text-white/80">
-					PD: [GARANTIA || URGENCIA REAL]
-				</p>
-			</div>
-		</div>
-	</section>
+  <div class="blur-element left" style="top: -200px;"></div>
+  <div class="blur-element right" style="top: 1000px;"></div>
+  <div class="blur-element left" style="top: 2000px;"></div>
+  <div class="blur-element right" style="top: 3000px;"></div>
+  <header>
+    <div class="cf-container">
+      <h3
+        class="text-center py-3 border-b border-b-white/30 font-semibold text-balance"
+      >
+        PARA HOMBRES +27 ATRAPADOS EN SU RUTINA LABORAL
+      </h3>
+    </div>
+  </header>
+  <section class="py-[60px] md:pb-[80px]">
+    <div class="cf-container">
+      <Reviews text="+100kg bajados y +30 vidas cambiadas" class="mb-8" />
 
-	<section class="py-[40px]">
-		<div class="cf-container">
-			<h2
-				class="text-[28px] font-bold text-white text-center uppercase max-w-[500px] leading-[120%] mx-auto"
-			>
-				ELLOS YA LO LOGRARON ¿QUE ESTAS ESPERANDO?
-			</h2>
-			<div class="mt-8 max-w-[900px] mx-auto">
-				{
-					VIDEO_TESTIMONIALS.map((testimonial) => {
-						return (
-							<div class="p-8 md:p-[50px] border rounded-[20px] border-white/20 flex md:flex-row flex-col gap-4 md:gap-8">
-								<div class="bg-gray-400 w-[190px] md:mx-0 mx-auto rounded-[10px] aspect-[9/16]" />
-								<div class="py-8 flex flex-col justify-between">
-									<div>
-										<h3 class="text-[24px] font-bold">
-											{testimonial.titulo}
-										</h3>
-										<p class="text-white/80 mt-4">
-											{testimonial.story}
-										</p>
-									</div>
-									<div>
-										<p>{testimonial.nombre}</p>
-										<p class="text-white/80 mt-2 text-[14px]">
-											{testimonial.dato}
-										</p>
-									</div>
-								</div>
-							</div>
-						);
-					})
-				}
-			</div>
-			<a class="mt-8 cf-btn" href="/calendly">CTA</a>
-		</div>
-	</section>
+      <h1
+        class="text-center text-[24px] md:text-[32px] font-bold leading-[95%] tracking-[-1%] mb-4 text-balance"
+      >
+        ELIMINÁ AL MENOS 15 KG EN 90 DÍAS, SIN DIETAS EXTREMAS NI ENTRENAMIENTOS
+        ETERNOS - SÓLO UN MÉTODO PENSADO PARA VOS
+      </h1>
+      <p
+        class="mt-4 text-center max-w-[717px] mx-auto text-white/80 tracking-[-1%] leading-[95%]"
+      >
+        Si ya intentaste de todo y no lográs resultados duraderos, es porque te
+        falta este enfoque que te garnatíza resultados. Mirá el video completo
+      </p>
+      <div
+        class="border-4 rounded-[12px] md:rounded-[16px] mt-8 max-w-[750px] mx-auto"
+        style="border-color: var(--primary);"
+      >
+        <div
+          class="p-2 text-center font-bold"
+          style="background-color: var(--primary);"
+        >
+          PASO 1 DE 2: CLIC PARA ACTIVAR EL SONIDO
+        </div>
+        <div
+          class="bg-gray-300 aspect-video rounded-br-[8px] md:rounded-br-[12px] rounded-bl-[8px] md:rounded-bl-[12px]"
+        >
+        </div>
+      </div>
+      <div class="mt-8">
+        <CustomButton
+          text="Reservá tu lugar ahora"
+          subtext="¡Ultimas plazas del mes!"
+        />
+      </div>
+    </div>
+  </section>
 
-	<section class="py-[80px]">
-		<div class="cf-container">
-			<h2
-				class="text-[28px] font-bold text-white text-center uppercase max-w-[600px] leading-[120%] mx-auto"
-			>
-				DICHO POR LOS QUE YA DEJARON DE [DOLOR] Y LOGRARON [DESEO]
-			</h2>
-			<p class="text-white/80 text-center mt-4 max-w-[400px] mx-auto">Si ellos pudieron vos tambien podes solo necesitas [PUNTO CLAVE]</p>
-			<div
-				class="mt-8 max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4"
-			>
-				{
-					SCREENSHOT_TESTIMONIALS.map((testimonial) => {
-						return (
-							<img
-								class="w-full min-h-[50px] bg-gray-400"
-								src={testimonial.captura}
-								alt="Testimonio"
-							/>
-						);
-					})
-				}
-			</div>
-			<a class="mt-8 cf-btn" href="/calendly">CTA</a>
-		</div>
-	</section>
-	<section class="pt-[40px] pb-[80px]">
-		<div class="cf-container">
-			<h2
-				class="text-[28px] font-bold text-white text-center uppercase max-w-[600px] leading-[120%] mx-auto"
-			>
-				PREGUNTAS FRECUENTES
-			</h2>
-		</div>
-	</section>
+  <section class="py-[40px]">
+    <div class="cf-container">
+      <Title text="Casos de éxito" />
+      <p
+        class="text-white/80 font-normal text-center mb-8 max-w-[473px] mx-auto text-[18px] leading-[95%] tracking-[-1%]"
+      >
+        Cada uno de estos mensajes me recuerda por qué amo lo que hago. Gracias
+        por confiar y por dejar estas palabras que valen oro.
+      </p>
+      <div class="mt-8 max-w-[900px] mx-auto flex flex-col gap-4">
+        {
+          VIDEO_TESTIMONIALS.map((testimonial) => {
+            return (
+              <div class="p-8 md:p-[50px] border rounded-[20px] border-white/20 flex md:flex-row flex-col gap-4 md:gap-8">
+                <div class="bg-gray-400 w-[190px] md:mx-0 mx-auto rounded-[10px] aspect-[9/16]" />
+                <div class="py-8 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-[24px] font-bold">{testimonial.titulo}</h3>
+                    <p class="text-white/80 mt-4">{testimonial.story}</p>
+                  </div>
+                  <div>
+                    <p>{testimonial.nombre}</p>
+                    <p class="text-white/80 mt-2 text-[14px]">
+                      {testimonial.dato}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+      <div class="mt-2">
+        <CustomButton href="/calendly" text="Reservá tu lugar ahora" />
+      </div>
+    </div>
+  </section>
 
-	<Footer />
+  <section class="py-[80px]">
+    <div class="cf-container">
+      <Title text="Testimonios de nuestros clientes" />
+      <p class="text-white/80 text-center mt-4 max-w-[400px] mx-auto">
+        Cada uno de estos mensajes me recuerda por qué amo lo que hago. Gracias
+        por confiar y por dejar estas palabras que valen oro.
+      </p>
+      <div class="mt-8 max-w-[900px] mx-auto flex flex-col md:flex-row gap-4">
+        <div class="flex flex-col w-full gap-4 md:w-[253px]">
+          <img src={testimonio1.src} alt="Testimonio 1" class="w-full" />
+          <img src={testimonio2.src} alt="Testimonio 2" class="w-full" />
+        </div>
+        <div class="flex flex-col w-full gap-4 md:w-[311px]">
+          <img src={testimonio3.src} alt="Testimonio 3" class="w-full" />
+          <img src={testimonio4.src} alt="Testimonio 4" class="w-full" />
+          <img src={testimonio5.src} alt="Testimonio 5" class="w-full" />
+        </div>
+        <div class="flex flex-col w-full gap-4 md:w-[291px]">
+          <img src={testimonio6.src} alt="Testimonio 6" class="w-full" />
+          <img src={testimonio7.src} alt="Testimonio 7" class="w-full" />
+          <img src={testimonio8.src} alt="Testimonio 8" class="w-full" />
+          <img src={testimonio9.src} alt="Testimonio 9" class="w-full" />
+        </div>
+      </div>
+      <div class="mt-8">
+        <CustomButton href="/calendly" text="Reservá tu lugar ahora" />
+      </div>
+    </div>
+  </section>
+  <section class="pt-[40px] pb-[80px]">
+    <div class="cf-container">
+      <Title text="PREGUNTAS FRECUENTES" />
+      <Faqs />
+    </div>
+  </section>
+
+  <Footer />
 </Layout>

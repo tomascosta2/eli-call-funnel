@@ -1,0 +1,21 @@
+---
+import profiles from "../../assets/img/profiles.webp";
+const { text, class: className } = Astro.props;
+---
+
+<div
+  class={` mx-auto w-fit flex flex-col md:flex-row gap-5 items-center px-4 ${className}`}
+>
+  <img
+    src={profiles.src}
+    width={profiles.width}
+    height={profiles.height}
+    alt="Sales Mastery Profiles"
+    class="w-20 sm:w-auto max-h-[41px]"
+  />
+  <p
+    class="text-white/80 max-w-[280px] sm:max-w-[220px] leading-[120%] text-center sm:text-left text-base"
+  >
+    {text}
+  </p>
+</div>

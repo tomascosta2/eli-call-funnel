@@ -1,0 +1,76 @@
+---
+import PlusIcon from "../assets/svg/plus.svg";
+
+const faqs = [
+  {
+    pregunta: "¿Necesito experiencia previa?",
+    respuesta:
+      "No, no necesitas ningún tipo de experiencia previa, de hecho la mayoría de los casos de éxito que tenemos empezaron totalmente desde 0.",
+  },
+  {
+    pregunta: "¿Necesito dejar de comer las cosas que me gustan?",
+    respuesta:
+      "Para nada. Nuestro enfoque se basa en crear hábitos sostenibles sin que tengas que renunciar a todo lo que te gusta. Te enseñamos a equilibrar tus comidas para que disfrutes del proceso.",
+  },
+  {
+    pregunta: "¿Funciona desde cualquier país?",
+    respuesta:
+      "Si, tenemos alumnos desde Argentina, Uruguay, Estados unidos, Venezuela, Colombia, Mexico, España y mas, podes realizarlo desde cualquier lugar del mundo.",
+  },
+  {
+    pregunta:
+      "¿Cuanto tiempo tengo que dedicarle para bajar entre 5 y 15kg de grasa?",
+    respuesta:
+      "Con solo 30-45 minutos al día, 3-4 veces por semana, empezarás a ver resultados notables. Diseñamos rutinas eficientes que se adaptan a tu vida ocupada.",
+  },
+  {
+    pregunta: "¿Cuando voy a ver los primeros resultados?",
+    respuesta:
+      "Aunque cada cuerpo es diferente, la mayoría de nuestros alumnos comienzan a ver y sentir cambios significativos en las primeras 2 a 3 semanas.",
+  },
+];
+---
+
+<div class="max-w-[800px] mx-auto mt-4 sm:mt-6" id="faq-container">
+  {
+    faqs.map((item, index) => (
+      <div
+        class="faq-item w-full cursor-pointer p-4 sm:p-5 md:p-[20px] border-b border-b-white/50 last:border-b-0"
+        data-index={index}>
+        <h3 class="faq-question font-regular text-base sm:text-lg md:text-[18px] lg:text-[20px] text-white flex justify-between items-center gap-2">
+          <span class="flex-shrink-1">{item.pregunta}</span>
+          <PlusIcon class="faq-icon flex-shrink-0 md:size-[20px] transition-transform duration-500 ease-in-out" />
+        </h3>
+        <div class="faq-answer normal-case overflow-hidden duration-500 transition-all max-h-0">
+          <p class="text-white text-base pt-3 sm:pt-[10px]">{item.respuesta}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script is:inline>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+    const icon = item.querySelector(".faq-icon");
+
+    question.addEventListener("click", () => {
+      const isOpen = answer.classList.contains("max-h-[2000px]");
+
+      document
+        .querySelectorAll(".faq-answer")
+        .forEach((ans) => ans.classList.remove("max-h-[2000px]"));
+      document
+        .querySelectorAll(".faq-icon")
+        .forEach((i) => i.classList.remove("rotate-45"));
+
+      if (!isOpen) {
+        answer.classList.add("max-h-[2000px]");
+        icon.classList.add("rotate-45");
+      }
+    });
+  });
+</script>

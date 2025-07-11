@@ -1,0 +1,34 @@
+---
+const {
+  text = "Agendar mi sesión de consultoría gratuita",
+  subtext = "¡Ultimas plazas del mes!",
+  href,
+} = Astro.props;
+
+const Tag = href ? "a" : "button";
+---
+
+<>
+  <Tag
+    class="z-10 md:min-w-[386px] flex justify-center items-center cursor-pointer gap-2 mt-6 bgLinear w-fit font-semibold text-[#111] outline-4 outline-white/30 mx-auto py-3 sm:py-4 px-6 sm:px-8 rounded-2xl sm:rounded-[16px] text-base max-w-[90%] sm:max-w-none"
+    onclick={Tag === "button" ? "window.openConsultoriaModal()" : undefined}
+    href={href}
+  >
+    <span class="text-center">{text}</span>
+    <svg
+      width="13"
+      height="12"
+      viewBox="0 0 13 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="flex-shrink-0"
+    >
+      <path
+        d="M6.41318 11.6364L5.09499 10.3296L8.55522 6.86932H0.447266V4.94887H8.55522L5.09499 1.49432L6.41318 0.181824L12.1404 5.9091L6.41318 11.6364Z"
+        fill="#111111"></path>
+    </svg>
+  </Tag>
+  <p class="text-white text-center mt-3 sm:mt-4 text-base">
+    {subtext}
+  </p>
+</>
