@@ -1,0 +1,158 @@
+---
+import Footer from "../../components/Footer.astro";
+import CalificationForm from "../../components/opt-in/calificationForm";
+import Layout from "../../layouts/Layout.astro";
+
+const VIDEO_TESTIMONIALS = [
+	{
+		video: "",
+		titulo: "[Nombre]",
+		story: "Situación previa vs actual con storytelling",
+		nombre: "Nombre y Apellido",
+		dato: "Edad || Ubicación",
+	},
+];
+
+const SCREENSHOT_TESTIMONIALS = [
+	{
+		captura: "",
+	},
+	{
+		captura: "",
+	},
+	{
+		captura: "",
+	},
+	{
+		captura: "",
+	},
+	{
+		captura: "",
+	},
+	{
+		captura: "",
+	},
+];
+---
+
+<Layout>
+	{
+		true && (
+			<CalificationForm client:only defaultEmail="" />
+		)
+	}
+	<header>
+		<div class="cf-container">
+			<h3
+				class="text-center py-3 border-b border-b-white/30 font-semibold"
+			>
+				METODO EXCLUSIVO PARA [NICHO]
+			</h3>
+		</div>
+	</header>
+	<section class="py-[60px] md:pb-[80px]">
+		<div class="cf-container">
+			<p class="text-center mb-4">Prueba social</p>
+			<h1 class="text-center text-[24px] md:text-[32px] font-bold leading-[120%]">
+				LOGRA [DESEO] Y DEJAR DE [DOLOR]
+			</h1>
+			<p class="mt-4 text-center max-w-[500px] mx-auto">
+				Mira el video y descubri como dejar de [DOLOR] y [DESEO]
+			</p>
+			<div
+				class="border-4 rounded-[12px] md:rounded-[16px] border-red-500 mt-8 max-w-[750px] mx-auto"
+			>
+				<div class="p-2 text-center font-bold bg-red-500">
+					PASO 1 DE 2: CLIC PARA ACTIVAR EL SONIDO
+				</div>
+				<div
+					class="bg-gray-300 aspect-video rounded-br-[8px] md:rounded-br-[12px] rounded-bl-[8px] md:rounded-bl-[12px]"
+				>
+				</div>
+			</div>
+			<div class="mt-8">
+				<p class="text-center mb-4 text-[18px] font-bold max-w-[500px] mx-auto">PASO 2 DE 2: HACE CLIC EN EL BOTON DE ABAJO Y OBTENE UNA CONSULTA GRATUITA 👇</p>
+				<button class="mt-8 cf-btn">CTA</button>
+				<p class="text-center mt-4 text-white/80">
+					PD: [GARANTIA || URGENCIA REAL]
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-[40px]">
+		<div class="cf-container">
+			<h2
+				class="text-[28px] font-bold text-white text-center uppercase max-w-[500px] leading-[120%] mx-auto"
+			>
+				ELLOS YA LO LOGRARON ¿QUE ESTAS ESPERANDO?
+			</h2>
+			<div class="mt-8 max-w-[900px] mx-auto">
+				{
+					VIDEO_TESTIMONIALS.map((testimonial) => {
+						return (
+							<div class="p-8 md:p-[50px] border rounded-[20px] border-white/20 flex md:flex-row flex-col gap-4 md:gap-8">
+								<div class="bg-gray-400 w-[190px] md:mx-0 mx-auto rounded-[10px] aspect-[9/16]" />
+								<div class="py-8 flex flex-col justify-between">
+									<div>
+										<h3 class="text-[24px] font-bold">
+											{testimonial.titulo}
+										</h3>
+										<p class="text-white/80 mt-4">
+											{testimonial.story}
+										</p>
+									</div>
+									<div>
+										<p>{testimonial.nombre}</p>
+										<p class="text-white/80 mt-2 text-[14px]">
+											{testimonial.dato}
+										</p>
+									</div>
+								</div>
+							</div>
+						);
+					})
+				}
+			</div>
+			<button class="mt-8 cf-btn">CTA</button>
+		</div>
+	</section>
+
+	<section class="py-[80px]">
+		<div class="cf-container">
+			<h2
+				class="text-[28px] font-bold text-white text-center uppercase max-w-[600px] leading-[120%] mx-auto"
+			>
+				DICHO POR LOS QUE YA DEJARON DE [DOLOR] Y LOGRARON [DESEO]
+			</h2>
+			<p class="text-white/80 text-center mt-4 max-w-[400px] mx-auto">Si ellos pudieron vos tambien podes solo necesitas [PUNTO CLAVE]</p>
+			<div
+				class="mt-8 max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4"
+			>
+				{
+					SCREENSHOT_TESTIMONIALS.map((testimonial) => {
+						return (
+							<img
+								class="w-full min-h-[50px] bg-gray-400"
+								src={testimonial.captura}
+								alt="Testimonio"
+							/>
+						);
+					})
+				}
+			</div>
+			<button class="mt-8 cf-btn">CTA</button>
+		</div>
+	</section>
+	<section class="pt-[40px] pb-[80px]">
+		<div class="cf-container">
+			<h2
+				class="text-[28px] font-bold text-white text-center uppercase max-w-[600px] leading-[120%] mx-auto"
+			>
+				PREGUNTAS FRECUENTES
+			</h2>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>

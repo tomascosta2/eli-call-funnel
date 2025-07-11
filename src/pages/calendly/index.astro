@@ -1,0 +1,127 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const TESTIMONIALS = [
+	{
+		img: '',
+		nombre: 'Nombre y Apellido',
+		dato: 'PUESTO || UBICACIÓN || EDAD',
+		texto: 'Testimonio acá. Lorem ipsum dolor latem '
+	},
+	{
+		img: '',
+		nombre: 'Nombre y Apellido',
+		dato: 'PUESTO || UBICACIÓN || EDAD',
+		texto: 'Testimonio acá. Lorem ipsum dolor latem '
+	},
+	{
+		img: '',
+		nombre: 'Nombre y Apellido',
+		dato: 'PUESTO || UBICACIÓN || EDAD',
+		texto: 'Testimonio acá. Lorem ipsum dolor latem '
+	},
+]
+---
+
+<Layout>
+	<section class="py-[80px]">
+		<div class="max-w-[1200px] mx-auto px-4">
+			<h1
+				class="text-[32px] font-bold leading-[120%] max-w-[800px] mb-8 mx-auto text-center"
+			>
+				Casi listo! Alguna vez te preguntaste como hay gente que
+				consigue [DESEO]? 👇
+			</h1>
+			<!--Ej de [DESEO]: "cambios tan increibles en poco tiempo" -->
+			<div class="grid md:grid-cols-2 gap-8">
+				<div>
+					<h2 class="text-[26px] font-bold leading-[120%] mb-8">
+						Nuestros clientes [LOGRO] en [TIEMPO]. <span
+							class="underline">Vos tambien podes</span
+						>. Agenda una llamada y vamos a hablar de:
+					</h2>
+					<ul class="mb-8 text-[18px]">
+						<li>✅ Beneficio 1 de entrar a la llamada</li>
+						<li>✅ Beneficio 2 de entrar a la llamada</li>
+						<li>✅ Beneficio 3 de entrar a la llamada</li>
+						<li>✅ Beneficio 4 de entrar a la llamada</li>
+					</ul>
+					<p class="text-[18px]">
+						Te <strong>garantizamos</strong> que te vas con ideas claras
+						de como [OBJETIVO] de un [EXPERTO || CERTIFICADOS]
+					</p>
+					<div class="mt-8 hidden md:block">
+						<div class="bg-gray-400 rounded-full">Certficado</div>
+					</div>
+				</div>
+				<!-- CALENDLY 1 (USE A PERSON PHOTO AND NAME - NO LOGO) -->
+				<div class="p-8 bg-white w-full min-h-[600px]"></div>
+				<div class="mt-8 md:hidden block">
+					<div class="bg-gray-400 rounded-full">Certficado</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="pb-[60px]">
+		<div class="max-w-[1200px] mx-auto px-4">
+			<div class="grid grid-cols-3 gap-4">
+				{
+					TESTIMONIALS.map((item) => {
+						return (
+							<div class="border border-white/20 rounded-lg p-8">
+								<div class="flex gap-4 items-center">
+									<img src={item.img} class="size-[70px] bg-gray-300 rounded-full" />
+									<div>
+										<h3 class="text-white text-[20px] font-semibold">{item.nombre}</h3>
+										<p class="text-[14px] text-white/80 mt-2">{item.dato}</p>
+									</div>
+								</div>
+								<p class="mt-4">
+									"{item.texto}"
+								</p>
+							</div>
+						)
+					})
+				}
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="max-w-[1200px] mx-auto px-4 border-t border-b border-red-500 py-[40px]">
+			<h2 class="text-center italic mb-8 text-[24px] font-bold">Nuestros clientes ven:</h2>
+			<div class="flex justify-between flex-wrap gap-4">
+				<h3 class="text-[20px] font-semibold">BENEFICIO 1</h3>
+				<h3 class="text-[20px] font-semibold">BENEFICIO 2</h3>
+				<h3 class="text-[20px] font-semibold">BENEFICIO 3</h3>
+			</div>
+		</div>
+	</section>
+
+	<!-- VERY CREDIBLE SOCIAL PROOF -->
+	<section class="py-[40px]">
+		<div class="max-w-[1200px] mx-auto py-[40px]">
+			<div class="grid grid-cols-4 gap-4">
+				<div class="h-[400px] w-full bg-gray-300">
+
+				</div>
+				<div class="h-[400px] w-full bg-gray-300">
+
+				</div>
+				<div class="h-[400px] w-full bg-gray-300">
+
+				</div>
+				<div class="h-[400px] w-full bg-gray-300">
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="max-w-[1200px] mx-auto py-[40px]">
+			<!-- CALENDLY 2 (USE A PERSON PHOTO AND NAME - NO LOGO) -->
+			<div class="p-8 bg-white w-full min-h-[600px]"></div>
+		</div>
+	</section>
+</Layout>
